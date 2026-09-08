@@ -1,0 +1,264 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height:100%;
+  width:100%;
+}
+
+body {
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background:#0b0d0c;
+  color :#ffffff
+}
+
+button{
+  font:inherit;
+  border:0;
+  cursor: pointer;
+}
+
+.app {
+  min-height:100vh;
+  background: linear-gradient(180deg, rgba(11,13, 12, 0.2) 0%, #0b0d0c 45%, #0b0d0c 100%);
+}
+
+.topbar {
+  height: 88px;
+  padding:0 6vw;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index:10;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:-1.5px;
+
+}
+
+.logo span {
+  color:#b8e63c;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 12px;
+
+}
+
+.topbar nav button, .topbar-actions button {
+  background: transparent;
+  color: #b7b9b7;
+  padding: 12ps 18px;
+  border-radius: 10px;
+}
+
+.topbar-actions {
+  display:flex;
+  gap:8px;
+}
+
+.hero {
+  min-height: 500px;
+  padding: 70px 6vw;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg,
+      #0b0d0c 0%,
+      rgba(11, 13, 12, 0.88) 38%,
+      rgba(11, 13, 12, 0.25) 75%,
+      #0b0d0c 100%),
+      url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=85") center / cover no-repeat;
+}
+
+.hero-content{
+  max-width: 650ps;
+}
+
+.eyebrow{
+  margin: 0 0 14px;
+  color:#b8e63c;
+  font-size:13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1{
+  margin: 0;
+  max-width: 650px;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.hero-description {
+  max-width: 580px;
+  margin: 28px 0;
+
+  color: #c4c7c4;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 15px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: #b8e63c;
+  color: #10130d;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.recipe-section {
+  padding: 38px 6vw 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.section-heading button {
+  background: transparent;
+  color: #aeb2ae;
+}
+
+.recipe-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 8px 4px 20px;
+}
+
+.recipe-row::-webkit-scrollbar {
+  display: none;
+}
+
+.recipe-card {
+  flex: 0 0 330px;
+  overflow: hidden;
+
+  background: #151817;
+  border-radius: 16px;
+
+  outline: none;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.recipe-card:focus,
+.recipe-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 3px #b8e63c;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 190px;
+  display: block;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 18px;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+
+  color: #aeb2ae;
+  font-size: 13px;
+}
+
+.recipe-card h3 {
+  margin: 10px 0 6px;
+  font-size: 21px;
+}
+
+.recipe-card p {
+  margin: 0;
+  color: #9fa39f;
+  line-height: 1.4;
+}
+
+.ingredients-section {
+  margin: 60px 6vw;
+  padding: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  border: 1px solid rgba(184, 230, 60, 0.2);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at right,
+      rgba(184, 230, 60, 0.13),
+      transparent 45%
+    ),
+    #111513;
+}
+
+.ingredients-section h2 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.ingredients-section p:not(.eyebrow) {
+  margin: 0;
+  max-width: 650px;
+  color: #aeb2ae;
+  line-height: 1.5;
+}
+
+/* Media queries for page responsiveness.. */
+
+@media (max-width:900px) {
+  .topbar nav {
+    display: none;
+  }
+
+  .hero{
+    min-height:600px;
+  }
+
+  .ingredients-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
